@@ -1,0 +1,23 @@
+.note-editor {
+}
+
+.note-editor__contenteditable {
+  max-height: 200px;
+  padding: 18.5px 14px;
+  border: 1px solid #e6e6e6;
+  border-radius: 4px;
+  overflow-y: auto;
+
+  white-space: pre-wrap;
+}
+
+.note-editor__measure {
+  margin-top: 8px;
+  padding: 4px 6px;
+  border-radius: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+  font-size: small;
+  background: #fffae0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}

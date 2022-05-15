@@ -1,0 +1,18 @@
+.note-view {
+  padding: 18.5px 14px;
+  overflow-wrap: break-word;
+  background: #efefef;
+  border-radius: 4px;
+}
+
+.note-view__controls {
+  margin-bottom: 16px;
+}
+
+.note-view__text :first-child {
+  margin-top: 0;
+}
+
+.note-view__text :last-child {
+  margin-bottom: 0;
+}
