@@ -1,0 +1,26 @@
+.primary-pane__empty-editor {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  border-radius: 8px;
+  background: #ffdb01;
+  padding: 48px 72px 60px;
+}
+
+.primary-pane__eyes {
+  font-size: 100px;
+}
+
+.primary-pane__eyes::after {
+  content: '👀';
+}
+
+.primary-pane__eyes:hover::after {
+  content: '👁👄👁';
+}
+
+.primary-pane__eyes-caption {
+  font-size: 48px;
+}

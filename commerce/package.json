@@ -1,0 +1,27 @@
+{
+  "name": "commerce",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "site",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "turbo run build --filter=next-commerce...",
+    "start": "turbo run dev",
+    "serve": "turbo run start",
+    "types": "turbo run types",
+    "prettier-fix": "prettier --write ."
+  },
+  "devDependencies": {
+    "husky": "^8.0.1",
+    "prettier": "^2.7.1",
+    "turbo": "^1.4.6"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "turbo run lint"
+    }
+  },
+  "packageManager": "yarn@3.3.1"
+}

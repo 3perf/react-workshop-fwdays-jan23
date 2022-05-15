@@ -1,0 +1,29 @@
+.notes {
+  display: flex;
+  height: 100vh;
+}
+
+.notes__column {
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.notes__column-content {
+  flex: 1 0 0;
+  min-height: 0;
+}
+
+.notes__column_list {
+  flex: 2 0 0;
+  background: #fffae0;
+}
+
+.notes__column_list h1 {
+  font-weight: 900;
+}
+
+.notes__column_primary {
+  background: white;
+  flex: 8 0 0;
+}
