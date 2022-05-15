@@ -1,0 +1,496 @@
+{
+  "products": [
+    {
+      "id": "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzU0NDczMjUwMjQ0MjA=",
+      "name": "New Short Sleeve T-Shirt",
+      "vendor": "Next.js",
+      "path": "/new-short-sleeve-t-shirt",
+      "slug": "new-short-sleeve-t-shirt",
+      "price": { "value": 25, "currencyCode": "USD" },
+      "description": "Show off your love for Next.js and Vercel with this unique, limited edition t-shirt. This design is part of a limited run, numbered drop at the June 2021 Next.js Conf. It features a unique, handcrafted triangle design. Get it while supplies last - only 200 of these shirts will be made! All proceeds will be donated to charity.",
+      "descriptionMd": "Show off your love for Next.js and Vercel with this unique, **limited edition** t-shirt. This design is part of a limited run, numbered drop at the June 2021 Next.js Conf. It features a unique, handcrafted triangle design. Get it while supplies last - only 200 of these shirts will be made! **All proceeds will be donated to charity.**",
+      "descriptionHtml": "<p><span>Show off your love for Next.js and Vercel with this unique,&nbsp;</span><strong>limited edition</strong><span>&nbsp;t-shirt. This design is part of a limited run, numbered drop at the June 2021 Next.js Conf. It features a unique, handcrafted triangle design. Get it while supplies last - only 200 of these shirts will be made!&nbsp;</span><strong>All proceeds will be donated to charity.</strong></p>",
+      "images": [
+        {
+          "url": "/assets/drop-shirt-0.png",
+          "altText": "Shirt",
+          "width": 1000,
+          "height": 1000
+        },
+        {
+          "url": "/assets/drop-shirt-1.png",
+          "altText": "Shirt",
+          "width": 1000,
+          "height": 1000
+        },
+        {
+          "url": "/assets/drop-shirt-2.png",
+          "altText": "Shirt",
+          "width": 1000,
+          "height": 1000
+        }
+      ],
+      "variants": [
+        {
+          "id": "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzU0NDczMjUwMjQ0MjAss=",
+          "name": "New Short Sleeve T-Shirt",
+          "sku": "new-short-sleeve-t-shirt",
+          "options": [
+            {
+              "__typename": "MultipleChoiceOption",
+              "id": "asd",
+              "displayName": "Size",
+              "values": [
+                {
+                  "label": "XL"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "option-color",
+          "displayName": "Color",
+          "values": [
+            {
+              "label": "color",
+              "hexColors": ["#222"]
+            }
+          ]
+        },
+        {
+          "id": "option-size",
+          "displayName": "Size",
+          "values": [
+            {
+              "label": "S"
+            },
+            {
+              "label": "M"
+            },
+            {
+              "label": "L"
+            }
+          ]
+        }
+      ],
+      "reviews": [
+        {
+          "id": 12,
+          "title": "OMG!!! BEST SHIRT EVER!!!",
+          "rating": 5,
+          "content": "I am **LITERALLY OBSESSED** with this shirt!!! The design is absolutely STUNNING and the quality is UNBELIEVABLE!!! I love the unique triangle design and the fact that it's a limited edition shirt makes it even more special. The fact that proceeds are going to charity is just the cherry on top!!!\n\nI was so excited when I saw that the shirt was available for purchase at the June 2021 Next.js Conf. I immediately placed my order and it arrived in record time! The packaging was so cute and even included a personal, handwritten note which made me feel like a valued customer.\n\nI have received so many compliments on this shirt and I have recommended it to all of my friends and family!!! I will definitely be buying more shirts from this store in the future!!! 😍😍😍",
+          "author": "Jenna K",
+          "date": "June 20, 2021",
+          "datetime": "2021-06-20"
+        },
+        {
+          "id": 1,
+          "title": "Can't say enough good things",
+          "rating": 5,
+          "content": "I was really pleased with the overall shopping experience. My order even included a little personal, handwritten note, which delighted me!\n\nThe product quality is amazing, it looks and feel even better than I had anticipated. Brilliant stuff! I would gladly recommend this store to my friends. And, now that I think of it... I actually have, many times!",
+          "author": "Risako M",
+          "date": "May 16, 2021",
+          "datetime": "2021-01-06"
+        },
+        {
+          "id": 6,
+          "title": "The perfect gift for a tech-savvy partner",
+          "rating": 5,
+          "content": "I bought this shirt as a gift for my tech-savvy partner and they absolutely loved it! The triangle design is unique and eye-catching, and the fit and comfort of the shirt is perfect. The quality of the material is also great. I highly recommend this shirt as a gift for anyone who loves Next.js and Vercel.",
+          "author": "Paula B",
+          "date": "May 21, 2021",
+          "datetime": "2021-05-21"
+        },
+        {
+          "id": 7,
+          "title": "20% more performant!",
+          "rating": 5,
+          "content": "I bought this shirt and I swear, since I've been wearing it, everything around me has become 20% more performant. I can't explain it, but I'm not complaining. The triangle design is unique and I love that it is a limited edition. The fit is perfect and the shirt is comfortable to wear. I also appreciate the fact that all proceeds go to charity. I definitely recommend this shirt to anyone looking to boost their performance.",
+          "author": "Benjamin L",
+          "date": "May 22, 2021",
+          "datetime": "2021-05-22"
+        },
+        {
+          "id": 9,
+          "title": "Bring on the baby sizes!",
+          "rating": 4,
+          "content": "I love this shirt and I wish I could buy it in a baby size for my little one. The triangle design is unique and I love that it is a limited edition. The fit is perfect and the shirt is comfortable to wear. I also appreciate the fact that all proceeds go to charity. The only downside is that the material is a bit thin but still it's worth buying. It would be great if they bring on baby sizes too!",
+          "author": "David H",
+          "date": "May 24, 2021",
+          "datetime": "2021-05-24"
+        },
+        {
+          "id": 3,
+          "title": "Meh, it's okay",
+          "rating": 3,
+          "content": "The shirt itself is fine, but I wasn't blown away by the design. I also wish the shirt was made out of a softer material. It's not bad, but it's not great either.",
+          "author": "Jane S",
+          "date": "May 18, 2021",
+          "datetime": "2021-05-18"
+        },
+        {
+          "id": 4,
+          "title": "Geekin' out over this shirt",
+          "rating": 4,
+          "content": "I absolutely love this shirt! The triangle design is so unique and cool. I also love that all proceeds go to charity. My only complaint is that I wish the shirt was a little more fitted, but that's just my personal preference.",
+          "author": "Mike T",
+          "date": "May 19, 2021",
+          "datetime": "2021-05-19"
+        },
+        {
+          "id": 2,
+          "title": "Not impressed",
+          "rating": 2,
+          "content": "I was really disappointed with this shirt. I thought the triangle design would be cooler, but it just looked like a bunch of pointy shapes to me. Plus, the shirt seemed a little too thin and flimsy for my liking. Not worth the $25, in my opinion.",
+          "author": "John D",
+          "date": "May 17, 2021",
+          "datetime": "2021-05-17"
+        },
+        {
+          "id": 5,
+          "title": "Triangle-tally awesome!",
+          "rating": 5,
+          "content": "I am absolutely in love with this shirt! The design is so unique and the quality of the shirt is top-notch. Plus, the fact that all proceeds go to charity makes me feel good about my purchase. I will definitely be buying more shirts from this store.",
+          "author": "Sara K",
+          "date": "May 20, 2021",
+          "datetime": "2021-05-20"
+        }
+      ]
+    },
+    {
+      "id": "Z2lkOi8vc2hvcGlmeS9Qcm9ksdWN0LzU0NDczMjUwMjQ0MjA=",
+      "name": "Lightweight Jacket",
+      "vendor": "Next.js",
+      "path": "/lightweight-jacket",
+      "slug": "lightweight-jacket",
+      "price": { "value": 249.99, "currencyCode": "USD" },
+      "description": "Show off your love for Next.js and Vercel with this unique, limited edition t-shirt. This design is part of a limited run, numbered drop at the June 2021 Next.js Conf. It features a unique, handcrafted triangle design. Get it while supplies last - only 200 of these shirts will be made! All proceeds will be donated to charity.",
+      "descriptionMd": "Show off your love for Next.js and Vercel with this unique, **limited edition** t-shirt. This design is part of a limited run, numbered drop at the June 2021 Next.js Conf. It features a unique, handcrafted triangle design. Get it while supplies last - only 200 of these shirts will be made! **All proceeds will be donated to charity.**",
+      "descriptionHtml": "<p><span>Show off your love for Next.js and Vercel with this unique,&nbsp;</span><strong>limited edition</strong><span>&nbsp;t-shirt. This design is part of a limited run, numbered drop at the June 2021 Next.js Conf. It features a unique, handcrafted triangle design. Get it while supplies last – only 200 of these shirts will be made!&nbsp;</span><strong>All proceeds will be donated to charity.</strong></p>",
+      "images": [
+        {
+          "url": "/assets/lightweight-jacket-0.png",
+          "altText": "Lightweight Jacket",
+          "width": 1000,
+          "height": 1000
+        },
+        {
+          "url": "/assets/lightweight-jacket-1.png",
+          "altText": "Lightweight Jacket",
+          "width": 1000,
+          "height": 1000
+        },
+        {
+          "url": "/assets/lightweight-jacket-2.png",
+          "altText": "Lightweight Jacket",
+          "width": 1000,
+          "height": 1000
+        }
+      ],
+      "variants": [
+        {
+          "id": "Z2lkOid8vc2hvcGlmeS9Qcm9kdWN0LzU0NDczMjUwMjQ0MjAss=",
+          "name": "Lightweight Jacket",
+          "sku": "lightweight-jacket",
+          "options": [
+            {
+              "__typename": "MultipleChoiceOption",
+              "id": "asd",
+              "displayName": "Size",
+              "values": [
+                {
+                  "label": "XL"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "option-color",
+          "displayName": "Color",
+          "values": [
+            {
+              "label": "color",
+              "hexColors": ["#222"]
+            }
+          ]
+        },
+        {
+          "id": "option-size",
+          "displayName": "Size",
+          "values": [
+            {
+              "label": "S"
+            },
+            {
+              "label": "M"
+            },
+            {
+              "label": "L"
+            }
+          ]
+        }
+      ],
+      "reviews": [
+        {
+          "id": 12,
+          "title": "OMG!!! BEST SHIRT EVER!!!",
+          "rating": 5,
+          "content": "I am **LITERALLY OBSESSED** with this shirt!!! The design is absolutely STUNNING and the quality is UNBELIEVABLE!!! I love the unique triangle design and the fact that it's a limited edition shirt makes it even more special. The fact that proceeds are going to charity is just the cherry on top!!!\n\nI was so excited when I saw that the shirt was available for purchase at the June 2021 Next.js Conf. I immediately placed my order and it arrived in record time! The packaging was so cute and even included a personal, handwritten note which made me feel like a valued customer.\n\nI have received so many compliments on this shirt and I have recommended it to all of my friends and family!!! I will definitely be buying more shirts from this store in the future!!! 😍😍😍",
+          "author": "Jenna K",
+          "date": "June 20, 2021",
+          "datetime": "2021-06-20"
+        },
+        {
+          "id": 1,
+          "title": "Can't say enough good things",
+          "rating": 5,
+          "content": "I was really pleased with the overall shopping experience. My order even included a little personal, handwritten note, which delighted me!\n\nThe product quality is amazing, it looks and feel even better than I had anticipated. Brilliant stuff! I would gladly recommend this store to my friends. And, now that I think of it... I actually have, many times!",
+          "author": "Risako M",
+          "date": "May 16, 2021",
+          "datetime": "2021-01-06"
+        },
+        {
+          "id": 6,
+          "title": "The perfect gift for a tech-savvy partner",
+          "rating": 5,
+          "content": "I bought this shirt as a gift for my tech-savvy partner and they absolutely loved it! The triangle design is unique and eye-catching, and the fit and comfort of the shirt is perfect. The quality of the material is also great. I highly recommend this shirt as a gift for anyone who loves Next.js and Vercel.",
+          "author": "Paula B",
+          "date": "May 21, 2021",
+          "datetime": "2021-05-21"
+        },
+        {
+          "id": 7,
+          "title": "20% more performant!",
+          "rating": 5,
+          "content": "I bought this shirt and I swear, since I've been wearing it, everything around me has become 20% more performant. I can't explain it, but I'm not complaining. The triangle design is unique and I love that it is a limited edition. The fit is perfect and the shirt is comfortable to wear. I also appreciate the fact that all proceeds go to charity. I definitely recommend this shirt to anyone looking to boost their performance.",
+          "author": "Benjamin L",
+          "date": "May 22, 2021",
+          "datetime": "2021-05-22"
+        },
+        {
+          "id": 9,
+          "title": "Bring on the baby sizes!",
+          "rating": 4,
+          "content": "I love this shirt and I wish I could buy it in a baby size for my little one. The triangle design is unique and I love that it is a limited edition. The fit is perfect and the shirt is comfortable to wear. I also appreciate the fact that all proceeds go to charity. The only downside is that the material is a bit thin but still it's worth buying. It would be great if they bring on baby sizes too!",
+          "author": "David H",
+          "date": "May 24, 2021",
+          "datetime": "2021-05-24"
+        },
+        {
+          "id": 3,
+          "title": "Meh, it's okay",
+          "rating": 3,
+          "content": "The shirt itself is fine, but I wasn't blown away by the design. I also wish the shirt was made out of a softer material. It's not bad, but it's not great either.",
+          "author": "Jane S",
+          "date": "May 18, 2021",
+          "datetime": "2021-05-18"
+        },
+        {
+          "id": 4,
+          "title": "Geekin' out over this shirt",
+          "rating": 4,
+          "content": "I absolutely love this shirt! The triangle design is so unique and cool. I also love that all proceeds go to charity. My only complaint is that I wish the shirt was a little more fitted, but that's just my personal preference.",
+          "author": "Mike T",
+          "date": "May 19, 2021",
+          "datetime": "2021-05-19"
+        },
+        {
+          "id": 2,
+          "title": "Not impressed",
+          "rating": 2,
+          "content": "I was really disappointed with this shirt. I thought the triangle design would be cooler, but it just looked like a bunch of pointy shapes to me. Plus, the shirt seemed a little too thin and flimsy for my liking. Not worth the $25, in my opinion.",
+          "author": "John D",
+          "date": "May 17, 2021",
+          "datetime": "2021-05-17"
+        },
+        {
+          "id": 5,
+          "title": "Triangle-tally awesome!",
+          "rating": 5,
+          "content": "I am absolutely in love with this shirt! The design is so unique and the quality of the shirt is top-notch. Plus, the fact that all proceeds go to charity makes me feel good about my purchase. I will definitely be buying more shirts from this store.",
+          "author": "Sara K",
+          "date": "May 20, 2021",
+          "datetime": "2021-05-20"
+        }
+      ]
+    },
+    {
+      "id": "Z2lkOis8vc2hvcGlmsddeS9Qcm9kdWN0LzU0NDczMjUwMjQ0MjA=",
+      "name": "Shirt",
+      "vendor": "Next.js",
+      "path": "/shirt",
+      "slug": "shirt",
+      "price": { "value": 25, "currencyCode": "USD" },
+      "description": "Show off your love for Next.js and Vercel with this unique, limited edition t-shirt. This design is part of a limited run, numbered drop at the June 2021 Next.js Conf. It features a unique, handcrafted triangle design. Get it while supplies last - only 200 of these shirts will be made! All proceeds will be donated to charity.",
+      "descriptionMd": "Show off your love for Next.js and Vercel with this unique, **limited edition** t-shirt. This design is part of a limited run, numbered drop at the June 2021 Next.js Conf. It features a unique, handcrafted triangle design. Get it while supplies last - only 200 of these shirts will be made! **All proceeds will be donated to charity.**",
+      "descriptionHtml": "<p><span>Show off your love for Next.js and Vercel with this unique,&nbsp;</span><strong>limited edition</strong><span>&nbsp;t-shirt. This design is part of a limited run, numbered drop at the June 2021 Next.js Conf. It features a unique, handcrafted triangle design. Get it while supplies last – only 200 of these shirts will be made!&nbsp;</span><strong>All proceeds will be donated to charity.</strong></p>",
+      "images": [
+        {
+          "url": "/assets/t-shirt-0.png",
+          "altText": "Shirt",
+          "width": 1000,
+          "height": 1000
+        },
+        {
+          "url": "/assets/t-shirt-1.png",
+          "altText": "Shirt",
+          "width": 1000,
+          "height": 1000
+        },
+        {
+          "url": "/assets/t-shirt-2.png",
+          "altText": "Shirt",
+          "width": 1000,
+          "height": 1000
+        },
+        {
+          "url": "/assets/t-shirt-3.png",
+          "altText": "Shirt",
+          "width": 1000,
+          "height": 1000
+        },
+        {
+          "url": "/assets/t-shirt-4.png",
+          "altText": "Shirt",
+          "width": 1000,
+          "height": 1000
+        }
+      ],
+      "variants": [
+        {
+          "id": "Z2lkOi8vc2hvcGlmeS9Qcms9kdWN0LzU0NDczMjUwMjQ0MjAss=",
+          "name": "Shirt",
+          "sku": "shirt",
+          "options": [
+            {
+              "__typename": "MultipleChoiceOption",
+              "id": "asd",
+              "displayName": "Size",
+              "values": [
+                {
+                  "label": "XL"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "option-color",
+          "displayName": "Color",
+          "values": [
+            {
+              "label": "color",
+              "hexColors": ["#222"]
+            }
+          ]
+        },
+        {
+          "id": "option-size",
+          "displayName": "Size",
+          "values": [
+            {
+              "label": "S"
+            },
+            {
+              "label": "M"
+            },
+            {
+              "label": "L"
+            }
+          ]
+        }
+      ],
+      "reviews": [
+        {
+          "id": 12,
+          "title": "OMG!!! BEST SHIRT EVER!!!",
+          "rating": 5,
+          "content": "I am **LITERALLY OBSESSED** with this shirt!!! The design is absolutely STUNNING and the quality is UNBELIEVABLE!!! I love the unique triangle design and the fact that it's a limited edition shirt makes it even more special. The fact that proceeds are going to charity is just the cherry on top!!!\n\nI was so excited when I saw that the shirt was available for purchase at the June 2021 Next.js Conf. I immediately placed my order and it arrived in record time! The packaging was so cute and even included a personal, handwritten note which made me feel like a valued customer.\n\nI have received so many compliments on this shirt and I have recommended it to all of my friends and family!!! I will definitely be buying more shirts from this store in the future!!! 😍😍😍",
+          "author": "Jenna K",
+          "date": "June 20, 2021",
+          "datetime": "2021-06-20"
+        },
+        {
+          "id": 1,
+          "title": "Can't say enough good things",
+          "rating": 5,
+          "content": "I was really pleased with the overall shopping experience. My order even included a little personal, handwritten note, which delighted me!\n\nThe product quality is amazing, it looks and feel even better than I had anticipated. Brilliant stuff! I would gladly recommend this store to my friends. And, now that I think of it... I actually have, many times!",
+          "author": "Risako M",
+          "date": "May 16, 2021",
+          "datetime": "2021-01-06"
+        },
+        {
+          "id": 6,
+          "title": "The perfect gift for a tech-savvy partner",
+          "rating": 5,
+          "content": "I bought this shirt as a gift for my tech-savvy partner and they absolutely loved it! The triangle design is unique and eye-catching, and the fit and comfort of the shirt is perfect. The quality of the material is also great. I highly recommend this shirt as a gift for anyone who loves Next.js and Vercel.",
+          "author": "Paula B",
+          "date": "May 21, 2021",
+          "datetime": "2021-05-21"
+        },
+        {
+          "id": 7,
+          "title": "20% more performant!",
+          "rating": 5,
+          "content": "I bought this shirt and I swear, since I've been wearing it, everything around me has become 20% more performant. I can't explain it, but I'm not complaining. The triangle design is unique and I love that it is a limited edition. The fit is perfect and the shirt is comfortable to wear. I also appreciate the fact that all proceeds go to charity. I definitely recommend this shirt to anyone looking to boost their performance.",
+          "author": "Benjamin L",
+          "date": "May 22, 2021",
+          "datetime": "2021-05-22"
+        },
+        {
+          "id": 9,
+          "title": "Bring on the baby sizes!",
+          "rating": 4,
+          "content": "I love this shirt and I wish I could buy it in a baby size for my little one. The triangle design is unique and I love that it is a limited edition. The fit is perfect and the shirt is comfortable to wear. I also appreciate the fact that all proceeds go to charity. The only downside is that the material is a bit thin but still it's worth buying. It would be great if they bring on baby sizes too!",
+          "author": "David H",
+          "date": "May 24, 2021",
+          "datetime": "2021-05-24"
+        },
+        {
+          "id": 3,
+          "title": "Meh, it's okay",
+          "rating": 3,
+          "content": "The shirt itself is fine, but I wasn't blown away by the design. I also wish the shirt was made out of a softer material. It's not bad, but it's not great either.",
+          "author": "Jane S",
+          "date": "May 18, 2021",
+          "datetime": "2021-05-18"
+        },
+        {
+          "id": 4,
+          "title": "Geekin' out over this shirt",
+          "rating": 4,
+          "content": "I absolutely love this shirt! The triangle design is so unique and cool. I also love that all proceeds go to charity. My only complaint is that I wish the shirt was a little more fitted, but that's just my personal preference.",
+          "author": "Mike T",
+          "date": "May 19, 2021",
+          "datetime": "2021-05-19"
+        },
+        {
+          "id": 2,
+          "title": "Not impressed",
+          "rating": 2,
+          "content": "I was really disappointed with this shirt. I thought the triangle design would be cooler, but it just looked like a bunch of pointy shapes to me. Plus, the shirt seemed a little too thin and flimsy for my liking. Not worth the $25, in my opinion.",
+          "author": "John D",
+          "date": "May 17, 2021",
+          "datetime": "2021-05-17"
+        },
+        {
+          "id": 5,
+          "title": "Triangle-tally awesome!",
+          "rating": 5,
+          "content": "I am absolutely in love with this shirt! The design is so unique and the quality of the shirt is top-notch. Plus, the fact that all proceeds go to charity makes me feel good about my purchase. I will definitely be buying more shirts from this store.",
+          "author": "Sara K",
+          "date": "May 20, 2021",
+          "datetime": "2021-05-20"
+        }
+      ]
+    }
+  ]
+}
