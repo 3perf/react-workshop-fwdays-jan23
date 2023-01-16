@@ -121,4 +121,8 @@ const WidgetsEditor = () => {
   );
 };
 
-export default WidgetsEditor;
+WidgetsEditor.whyDidYouRender = {
+  logOnDifferentValues: true,
+};
+
+export default memo(WidgetsEditor);

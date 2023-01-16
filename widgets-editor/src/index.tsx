@@ -1,5 +1,5 @@
 // Uncomment to enable why-did-you-render:
-// import "./wdyr";
+import "./wdyr";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";

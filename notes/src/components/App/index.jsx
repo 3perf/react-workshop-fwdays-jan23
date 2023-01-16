@@ -1,7 +1,7 @@
 import { formatISO } from "date-fns";
 import Jabber from "jabber";
 import { nanoid } from "nanoid";
-import { memo, useEffect, useState } from "react";
+import { memo, useCallback, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { deleteNotes, getNotes, putNote } from "../../utils/storage";
 import { updateLastActiveDate } from "../../store/redux/userReducer";
@@ -36,7 +36,7 @@ function App({ mobxStore }) {
     );
   };
 
-  const createNewNotes = ({ count, paragraphs }) => {
+  const createNewNotes = useCallback(({ count, paragraphs }) => {
     for (let i = 0; i < count; i++) {
       const noteId = nanoid();
 
@@ -80,15 +80,15 @@ function App({ mobxStore }) {
       const noteIds = Object.keys(newNotes);
       setActiveNoteId(noteIds[noteIds.length - 1]);
     }
-  };
+  }, []);
 
-  const deleteAllNotes = () => {
+  const deleteAllNotes = useCallback(() => {
     deleteNotes();
 
     const newNotes = getNotes();
     setNotes(newNotes);
     setActiveNoteId(null);
-  };
+  }, []);
 
   return (
     <DarkModeProvider>
