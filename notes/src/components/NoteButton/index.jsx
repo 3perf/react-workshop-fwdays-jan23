@@ -1,8 +1,9 @@
 import ReactMarkdown from "react-markdown";
+import { parse } from "marked";
 import gfm from "remark-gfm";
 import { format } from "date-fns";
 import "./index.css";
-import { memo } from "react";
+import { memo, useEffect, useRef } from "react";
 
 function NoteButton({ isActive, onNoteActivated, id, text, filterText, date }) {
   const className = [
@@ -13,6 +14,15 @@ function NoteButton({ isActive, onNoteActivated, id, text, filterText, date }) {
     .filter((i) => i !== false)
     .join(" ");
 
+  // useWhyDidYouUpdate("NoteButton", {
+  //   isActive,
+  //   onNoteActivated,
+  //   id,
+  //   text,
+  //   filterText,
+  //   date,
+  // });
+
   return (
     <button className={className} onClick={() => onNoteActivated(id)}>
       <span className="notes-list__note-meta">
@@ -22,6 +32,41 @@ function NoteButton({ isActive, onNoteActivated, id, text, filterText, date }) {
     </button>
   );
 }
+
+function useWhyDidYouUpdate(name, props) {
+  // Get a mutable ref object where we can store props ...
+  // ... for comparison next time this hook runs.
+  const previousProps = useRef();
+  useEffect(() => {
+    if (previousProps.current) {
+      // Get all keys from previous and current props
+      const allKeys = Object.keys({ ...previousProps.current, ...props });
+      // Use this object to keep track of changed props
+      const changesObj = {};
+      // Iterate through keys
+      allKeys.forEach((key) => {
+        // If previous is different from current
+        if (previousProps.current[key] !== props[key]) {
+          // Add to changesObj
+          changesObj[key] = {
+            from: previousProps.current[key],
+            to: props[key],
+          };
+        }
+      });
+      // If changesObj not empty then output to console
+      if (Object.keys(changesObj).length) {
+        console.log("[why-did-you-update]", name, changesObj);
+      }
+    }
+    // Finally update previousProps with current props for next hook call
+    previousProps.current = props;
+  });
+}
+
+// 1) virtualization → react-virtuoso
+// 2) find a cheaper library → marked
+// 3) delay highlighting or search
 
 function generateNoteHeader(text, filterText) {
   let firstLine = text
@@ -64,6 +109,20 @@ function generateNoteHeader(text, filterText) {
     };
   }
 
+  // return (
+  //   <div
+  //     dangerouslySetInnerHTML={{
+  //       __html: parse(
+  //         firstLine
+  //           .replace("<p>", "")
+  //           .replace("</p>", "")
+  //           .replace("<del>", "<mark>")
+  //           .replace("</del>", "</mark>")
+  //       ),
+  //     }}
+  //   ></div>
+  // );
+
   return (
     <ReactMarkdown
       remarkPlugins={[gfm]}
@@ -77,3 +136,10 @@ function generateNoteHeader(text, filterText) {
 }
 
 export default memo(NoteButton);
+
+// Exercise optimizations:
+// 1) NoteButton -> pass the first line instead of the whole text
+// 2) React-Markdown → marked
+// 3) storage → only save one note at a time (!)
+// 4) PrimaryPane: notes → activeNote (not effective here)
+// 5) Editor: onChange → onBlur + onbeforeunload

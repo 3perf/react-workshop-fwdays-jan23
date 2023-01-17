@@ -14,7 +14,7 @@ function NoteEditor({ notes, activeNoteId, saveNote }) {
       lineWrapping: true,
     });
 
-    editor.on("change", (doc, change) => {
+    editor.on("blur", (doc, change) => {
       if (change.origin !== "setValue") {
         saveNote({ text: doc.getValue() });
       }
