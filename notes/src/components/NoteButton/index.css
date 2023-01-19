@@ -48,6 +48,7 @@
   display: block;
   white-space: nowrap;
   overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .notes-list__note-header_overflowing {

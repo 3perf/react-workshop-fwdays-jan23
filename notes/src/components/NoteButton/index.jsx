@@ -7,17 +7,26 @@ import { memo, useLayoutEffect, useRef } from "react";
 function NoteButton({ isActive, onNoteActivated, id, text, filterText, date }) {
   const noteHeader = useRef();
 
-  useLayoutEffect(() => {
-    if (noteHeader.current) {
-      if (noteHeader.current.scrollWidth > noteHeader.current.clientWidth) {
-        noteHeader.current.classList.add("notes-list__note-header_overflowing");
-      } else {
-        noteHeader.current.classList.remove(
-          "notes-list__note-header_overflowing"
-        );
-      }
-    }
-  }, [text]);
+  // useLayoutEffect(() => {
+  //   if (noteHeader.current) {
+  //     if (noteHeader.current.scrollWidth > noteHeader.current.clientWidth) {
+  //       // Takes the code
+  //       // Delays it until the end of the frame
+  //       // But guarantees that it will run in this frame
+  //       requestAnimationFrame(() => {
+  //         noteHeader.current.classList.add(
+  //           "notes-list__note-header_overflowing"
+  //         );
+  //       });
+  //     } else {
+  //       requestAnimationFrame(() => {
+  //         noteHeader.current.classList.remove(
+  //           "notes-list__note-header_overflowing"
+  //         );
+  //       });
+  //     }
+  //   }
+  // }, [text]);
 
   const className = [
     "notes-list__button",
