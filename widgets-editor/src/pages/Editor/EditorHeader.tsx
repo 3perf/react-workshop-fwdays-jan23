@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styled, { ThemeProvider } from "styled-components";
 import {
   ApplicationPayload,
@@ -142,6 +142,27 @@ export const EditorHeader = () => {
   const darkTheme = useSelector((state: AppState) =>
     getThemeDetails(state, ThemeMode.DARK),
   );
+
+  useWhyDidYouUpdate("EditorHeader", {
+    isSaving,
+    pageSaveError,
+    orgId,
+    applicationId,
+    currentApplication,
+    isPublishing,
+    pageId,
+    isSavingName,
+    applicationList,
+    user,
+    darkTheme,
+  });
+
+  // Solutions:
+  // 1) Make the chain of rerenders cheaper:
+  //    if (!orgId || !applicationId || !currentApplication || !user) return <Loading />;
+  // 2) Refactor the logic to dispatch actions at the same time (Promise.all, sagas: all() + return the result instead of yield put())
+  // 3) Refactor the backend
+  // 4)
 
   const dispatch = useDispatch();
   const publishApplication = (applicationId: string) => {
@@ -306,4 +327,45 @@ export const EditorHeader = () => {
   );
 };
 
+EditorHeader.whyDidYouRender = {
+  logOnDifferentValues: true,
+};
+
 export default EditorHeader;
+
+function useWhyDidYouUpdate(name, props) {
+  // Get a mutable ref object where we can store props ...
+  // ... for comparison next time this hook runs.
+  const previousProps = useRef();
+  useEffect(() => {
+    if (previousProps.current) {
+      // Get all keys from previous and current props
+      const allKeys = Object.keys({ ...previousProps.current, ...props });
+      // Use this object to keep track of changed props
+      const changesObj = {};
+      // Iterate through keys
+      allKeys.forEach((key) => {
+        // If previous is different from current
+        if (previousProps.current[key] !== props[key]) {
+          // Add to changesObj
+          changesObj[key] = {
+            from: previousProps.current[key],
+            to: props[key],
+          };
+        }
+      });
+      // If changesObj not empty then output to console
+      if (Object.keys(changesObj).length) {
+        console.log("[why-did-you-update]", name, changesObj);
+        performance.mark(
+          "why-did-you-update: " +
+            name +
+            " " +
+            Object.keys(changesObj).join(", "),
+        );
+      }
+    }
+    // Finally update previousProps with current props for next hook call
+    previousProps.current = props;
+  });
+}

@@ -1,4 +1,5 @@
 import { Button } from "@mui/material";
+import { unstable_batchedUpdates } from "react-dom";
 import { useState } from "react";
 import fakeApi from "../../utils/fakeApi";
 import NoteEditor from "../NoteEditor";
@@ -9,26 +10,94 @@ import spinner from "./spinner.svg";
 import "./index.css";
 
 function PrimaryPane({ activeNoteId, notes, saveNote }) {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false); // ← hook 1
   const [isPublic, setIsPublic] = useState(false);
-  const [publishedAt, setPublishedAt] = useState(null);
+  const [publishedAt, setPublishedAt] = useState();
+
+  // const [{ isLoading, isPublic, publishedAt }, dispatch] = useReducer(reducer,
+  //   { isLoading: false, isPublic: false, publishedAt: null })
 
   const togglePublic = async () => {
-    setIsLoading(true);
-    setPublishedAt(null);
+    setIsLoading(Math.random()); // → state 1
+    setPublishedAt(null); // → state 3
 
-    if (isPublic) {
-      await fakeApi.setPublicStatus(false);
-      setIsPublic(false);
+    if (isPublic /* === false */) {
+      // await fakeApi.setPublicStatus(false);
+      // setIsPublic(false);
     } else {
       await fakeApi.setPublicStatus(true);
       const publishedDate = await fakeApi.getPublishedDate();
-      setIsPublic(true);
-      setPublishedAt(publishedDate.toLocaleTimeString());
+      unstable_batchedUpdates(() => {
+        setIsPublic(true); // → state 2
+        setPublishedAt(publishedDate.toLocaleTimeString()); // → state 3
+        setIsLoading(false); // → state 1
+      });
     }
-
-    setIsLoading(false);
   };
+
+  // Chains of Rerenders solutions:
+  // 1) Update React 18
+  // 2) switch to useReducer / single state object
+  // 3) unstable_batchedUpdates()
+
+  // Batching updates:
+  //   setIsLoading(Math.random())
+  //   setPublishedAt(Math.random())
+  // React 17: less effective (only in event listeners)
+  // React 18: works as you’d expect
+
+  /*
+
+  // Naive React 0.0.1:
+  setState = (newState) => {
+    rerenderStuff({ component: currentComponent, state: newState })
+  }
+
+  ////////////////////////////////////
+  // React 17−:
+  setState = (newState) => {
+    updateQueue.push({ component: currentComponent, state: newState })
+    if (!batchedUpdates) {
+      rerenderStuff(updateQueue)
+      updateQueue = []
+    }
+  }
+
+  batchedUpdates = false
+  onClick = (eventHandler) => {
+    unstable_batchedUpdates(() => {
+      eventHandler()
+    })
+  }
+
+  unstable_batchedUpdates = (callback) => {
+    batchedUpdates = true
+    callback()
+    batchedUpdates = false
+    rerenderStuff(updateQueue)
+  }
+
+  ////////////////////////////////////
+  // React 18:
+  setState = (newState) => {
+    updateQueue.push({ component: currentComponent, state: newState })
+
+    scheduleUpdateOnFiber()
+  }
+
+  scheduled = false
+  scheduleUpdateOnFiber = () => {
+    if (scheduled) return
+    scheduled = true
+    // Promise.resolve().then()
+    window.queueMicrotask(() => {
+      rerenderStuff(updateQueue)
+      updateQueue = []
+      scheduled = false
+    })
+
+    unstable_batchedUpdates = cb => cb()
+  */
 
   if (!activeNoteId) {
     return (

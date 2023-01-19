@@ -3,6 +3,7 @@ import { Button, ButtonGroup } from "@mui/material";
 import FilterInput from "../FilterInput";
 import NoteButton from "../NoteButton";
 import "./index.css";
+import { useLayoutEffect } from "react";
 
 function NotesList({
   notes,
@@ -12,6 +13,26 @@ function NotesList({
   onDeleteAllRequested,
 }) {
   const [filter, setFilter] = useState("");
+
+  // useLayoutEffect(() => {
+  //   const allNoteButtons = document.querySelectorAll(
+  //     ".notes-list__note-header"
+  //   );
+
+  //   // 1) All the reads
+  //   const allNoteButtonsOverflowing = [...allNoteButtons].map(
+  //     (i) => i.scrollWidth > i.clientWidth
+  //   );
+
+  //   // 2) All the writes
+  //   for (const [index, noteButton] of allNoteButtons.entries()) {
+  //     if (allNoteButtonsOverflowing[index]) {
+  //       noteButton.classList.add("notes-list__note-header_overflowing");
+  //     } else {
+  //       noteButton.classList.remove("notes-list__note-header_overflowing");
+  //     }
+  //   }
+  // }, [notes]);
 
   return (
     <div className="notes-list" style={{ position: "relative" }}>

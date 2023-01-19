@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import ContentEditable from "react-contenteditable";
 import "./index.css";
 import TextMeasure from "../TextMeasure";

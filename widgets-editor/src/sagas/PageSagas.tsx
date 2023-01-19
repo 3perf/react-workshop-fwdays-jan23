@@ -105,34 +105,36 @@ export function* fetchPageListSaga(
         isDefault: page.isDefault,
         isHidden: !!page.isHidden,
       }));
-      yield put({
-        type: ReduxActionTypes.SET_CURRENT_ORG_ID,
-        payload: {
-          orgId,
+      return [
+        {
+          type: ReduxActionTypes.SET_CURRENT_ORG_ID,
+          payload: {
+            orgId,
+          },
         },
-      });
-      yield put({
-        type: ReduxActionTypes.FETCH_PAGE_LIST_SUCCESS,
-        payload: {
-          pages,
-          applicationId,
+        {
+          type: ReduxActionTypes.FETCH_PAGE_LIST_SUCCESS,
+          payload: {
+            pages,
+            applicationId,
+          },
         },
-      });
+      ];
     } else {
-      yield put({
+      return {
         type: ReduxActionErrorTypes.FETCH_PAGE_LIST_ERROR,
         payload: {
           error: response.responseMeta.error,
         },
-      });
+      };
     }
   } catch (error) {
-    yield put({
+    return {
       type: ReduxActionErrorTypes.FETCH_PAGE_LIST_ERROR,
       payload: {
         error,
       },
-    });
+    };
   }
 }
 

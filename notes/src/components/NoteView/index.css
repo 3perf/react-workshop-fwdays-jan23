@@ -5,6 +5,11 @@
   border-radius: 4px;
 }
 
+.note-view p {
+  content-visibility: auto;
+  contain-intrinsic-height: auto 50px;
+}
+
 .note-view__controls {
   margin-bottom: 16px;
 }

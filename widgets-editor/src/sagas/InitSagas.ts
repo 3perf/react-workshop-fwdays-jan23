@@ -32,7 +32,7 @@ import { getCurrentApplication } from "selectors/applicationSelectors";
 import { APP_MODE } from "reducers/entityReducers/appReducer";
 import { getPersistentAppStore } from "constants/AppConstants";
 import { getDefaultPageId } from "./selectors";
-import { populatePageDSLsSaga } from "./PageSagas";
+import { fetchPageListSaga, populatePageDSLsSaga } from "./PageSagas";
 import log from "loglevel";
 import * as Sentry from "@sentry/react";
 import {
@@ -40,6 +40,7 @@ import {
   restoreRecentEntitiesRequest,
 } from "actions/globalSearchActions";
 import { resetEditorSuccess } from "actions/initActions";
+import { fetchActionsSaga } from "./ActionSagas";
 
 function* initializeEditorSaga(
   initializeEditorAction: ReduxAction<InitializeEditorPayload>,
@@ -49,12 +50,20 @@ function* initializeEditorSaga(
     yield put(setAppMode(APP_MODE.EDIT));
     yield put(updateAppPersistentStore(getPersistentAppStore(applicationId)));
     yield put({ type: ReduxActionTypes.START_EVALUATION });
-    yield all([
-      put(fetchPageList(applicationId, APP_MODE.EDIT)),
-      put(fetchActions(applicationId)),
-      put(fetchPage(pageId)),
-      put(fetchApplication(applicationId, APP_MODE.EDIT)),
+
+    yield call(fetchPageListSaga, fetchPageList(applicationId, APP_MODE.EDIT));
+    const actionsToDispatch = yield all([
+      // put(fetchPageList(applicationId, APP_MODE.EDIT)),
+      call(fetchPageListSaga, fetchPageList(applicationId, APP_MODE.EDIT)),
+      // put(fetchActions(applicationId)),
+      call(fetchActionsSaga, fetchActions(applicationId)),
+      // put(fetchPage(pageId)),
+      // ...
+      // put(fetchApplication(applicationId, APP_MODE.EDIT)),
+      // ...
     ]);
+
+    // yield all(actionsToDispatch.flat().map((action) => put(action)));
 
     yield put(restoreRecentEntitiesRequest(applicationId));
 
