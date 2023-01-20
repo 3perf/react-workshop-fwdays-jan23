@@ -5,7 +5,7 @@
 // https://github.com/lukeed/taskr/pull/305
 
 const path = require('path')
-const transform = require('@swc/core').transform
+const transform = require('@swc/wasm').transform
 
 module.exports = function (task) {
   task.plugin(

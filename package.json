@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "build": "yarn workspaces run build",
-    "start": "concurrently --names commerce,commerce-local,site 'cd packages/commerce && yarn dev' 'cd packages/commerce-local && yarn dev' 'cd site && yarn dev'",
+    "start": "concurrently --names commerce,commerce-local,site 'cd packages/commerce && yarn dev' 'cd packages/local && yarn dev' 'sleep 5 && cd site && yarn dev'",
     "serve": "cd site && yarn start"
   },
   "devDependencies": {
