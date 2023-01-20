@@ -18,7 +18,7 @@ yarn start
 ```
 
 ```sh
-cd notes-hydration
+cd notes-server-components
 yarn
 yarn start
 ```
