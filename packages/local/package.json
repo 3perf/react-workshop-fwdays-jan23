@@ -47,7 +47,7 @@
     }
   },
   "dependencies": {
-    "@vercel/commerce": "workspace:*"
+    "@vercel/commerce": "*"
   },
   "peerDependencies": {
     "next": "^13",
