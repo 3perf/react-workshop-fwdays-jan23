@@ -8,11 +8,12 @@
   ],
   "scripts": {
     "build": "yarn workspaces run build",
-    "start": "concurrently --names commerce,commerce-local,site 'cd packages/commerce && yarn dev' 'cd packages/local && yarn dev' 'sleep 5 && cd site && yarn dev'",
+    "start": "concurrently --names commerce,commerce-local,site 'cd packages/commerce && yarn dev' 'cd packages/local && yarn dev' 'yarn sleepms 5000 && cd site && yarn dev'",
     "serve": "cd site && yarn start"
   },
   "devDependencies": {
     "concurrently": "^7.6.0",
-    "prettier": "^2.7.1"
+    "prettier": "^2.7.1",
+    "sleep-ms": "^2.0.1"
   }
 }
