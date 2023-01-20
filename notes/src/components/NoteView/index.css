@@ -9,3 +9,8 @@
 .note-view :last-child {
   margin-bottom: 0;
 }
+
+.note-view p {
+  content-visibility: auto;
+  contain-intrinsic-height: auto 50px;
+}

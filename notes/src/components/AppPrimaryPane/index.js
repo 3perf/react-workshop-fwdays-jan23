@@ -1,18 +1,18 @@
-import { Avatar, AvatarGroup } from "@mui/material";
-import { useSelector } from "react-redux";
-import NoteView from "../NoteView";
-import "./index.css";
+import { Avatar, AvatarGroup } from '@mui/material'
+import { useSelector } from 'react-redux'
+import NoteView from '../NoteView'
+import './index.css'
 
 function Authors() {
   const activeThisMonth = useSelector((state) =>
-    state.users.filter((i) => i.lastActiveDate.includes("2021-09"))
-  );
+    state.users.filter((i) => i.lastActiveDate.includes('2021-09'))
+  )
 
   return (
     <div className="primary-pane__authors">
       <div className="primary-pane__authors-last-active">
-        {activeThisMonth.length} authors active this month:{" "}
-        {activeThisMonth.map((i) => i.name).join(", ")}
+        {activeThisMonth.length} authors active this month:{' '}
+        {activeThisMonth.map((i) => i.name).join(', ')}
       </div>
       <AvatarGroup max={2}>
         <Avatar src="/avatar1.jpg" />
@@ -20,7 +20,7 @@ function Authors() {
         <Avatar src="/avatar3.jpg" />
       </AvatarGroup>
     </div>
-  );
+  )
 }
 function AppPrimaryPane({ activeNoteId, notes, saveNote }) {
   if (!activeNoteId) {
@@ -31,7 +31,7 @@ function AppPrimaryPane({ activeNoteId, notes, saveNote }) {
           Select a note to view it
         </div>
       </div>
-    );
+    )
   }
 
   return (
@@ -43,11 +43,11 @@ function AppPrimaryPane({ activeNoteId, notes, saveNote }) {
 
       <div className="primary-pane__content">
         <div className="primary-pane__view">
-          <NoteView text={notes[activeNoteId].text} />
+          <NoteView text={notes[activeNoteId].text} key={activeNoteId} />
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default AppPrimaryPane;
+export default AppPrimaryPane

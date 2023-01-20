@@ -11,6 +11,8 @@ import { SEO } from '@components/common'
 import ProductSidebar from '../ProductSidebar'
 import ProductTag from '../ProductTag'
 import ProductReview from '../ProductReview'
+import LazyHydrate from 'react-lazy-hydration'
+
 interface ProductViewProps {
   product: Product
   relatedProducts: Product[]
@@ -71,7 +73,9 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
           <div className="py-16 sm:py-24">
             <div className="mt-6 space-y-10 divide-y divide-gray-200 border-t border-b pb-10">
               {product.reviews.map((review) => (
-                <ProductReview review={review} key={review.id} />
+                // <LazyHydrate ssrOnly key={review.id}>
+                <ProductReview review={review} />
+                // </LazyHydrate>
               ))}
             </div>
           </div>
