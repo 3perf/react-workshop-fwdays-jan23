@@ -11,6 +11,7 @@
     "@reduxjs/toolkit": "^1.9.1",
     "codemirror": "^5.65.11",
     "date-fns": "^2.29.3",
+    "immer": "^9.0.18",
     "jabber": "^1.5.2",
     "lodash": "^4.17.21",
     "marked": "^4.2.12",
@@ -23,6 +24,7 @@
     "react-redux": "^8.0.5",
     "redux": "^4.2.0",
     "remark-gfm": "^3.0.1",
+    "reselect": "^4.1.7",
     "text-readability": "^1.0.5"
   },
   "devDependencies": {

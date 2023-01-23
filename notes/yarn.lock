@@ -1710,6 +1710,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"immer@npm:^9.0.18":
+  version: 9.0.18
+  resolution: "immer@npm:9.0.18"
+  checksum: 85b3153dd01fce73c40591d0d6d7cd95878dab49f8ec4744c044adac05e0dab847b30c26259c478a5f87f974897be6df2780ff5bf86c8a0a27578fdeb300eb10
+  languageName: node
+  linkType: hard
+
 "import-fresh@npm:^3.2.1":
   version: 3.3.0
   resolution: "import-fresh@npm:3.3.0"
@@ -2921,6 +2928,7 @@ __metadata:
     "@welldone-software/why-did-you-render": ^7.0.1
     codemirror: ^5.65.11
     date-fns: ^2.29.3
+    immer: ^9.0.18
     jabber: ^1.5.2
     lodash: ^4.17.21
     marked: ^4.2.12
@@ -2933,6 +2941,7 @@ __metadata:
     react-redux: ^8.0.5
     redux: ^4.2.0
     remark-gfm: ^3.0.1
+    reselect: ^4.1.7
     text-readability: ^1.0.5
     vite: ^4.0.4
   languageName: unknown

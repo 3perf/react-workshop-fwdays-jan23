@@ -47,6 +47,7 @@ import HelpBar from "components/editorComponents/GlobalSearch/HelpBar";
 import HelpButton from "./HelpButton";
 import OnboardingIndicator from "components/editorComponents/Onboarding/Indicator";
 import { getThemeDetails, ThemeMode } from "selectors/themeSelectors";
+import { useStore } from "react-redux";
 
 const HeaderWrapper = styled(StyledHeader)`
   width: 100%;
@@ -129,19 +130,26 @@ const StyledDeployButton = styled(Button)`
 export const EditorHeader = () => {
   const isSaving = useSelector(getIsPageSaving);
   const pageSaveError = useSelector(getPageSavingError);
-  const orgId = useSelector(getCurrentOrgId);
-  const applicationId = useSelector(getCurrentApplicationId);
+  const orgId = useSelector(getCurrentOrgId); // ←
+  // const applicationId = useSelector(getCurrentApplicationId); // ←
+  // why am I selecting this during the render time, if I only need this much later, when the callback is called?
+  //
   const currentApplication = useSelector(
     (state: AppState) => state.ui.applications.currentApplication,
-  );
+  ); // ←
   const isPublishing = useSelector(getIsPublishingApplication);
   const pageId = useSelector(getCurrentPageId);
   const isSavingName = useSelector(getIsSavingAppName);
-  const applicationList = useSelector(getApplicationList);
-  const user = useSelector(getCurrentUser);
+  const isNewApp = useSelector((state: AppState) => {
+    const applicationList = getApplicationList(state);
+    const applicationId = getCurrentApplicationId(state);
+    return applicationList.filter((el) => el.id === applicationId).length > 0;
+  });
+  const user = useSelector(getCurrentUser); // ←
   const darkTheme = useSelector((state: AppState) =>
     getThemeDetails(state, ThemeMode.DARK),
   );
+  const store = useStore();
 
   const dispatch = useDispatch();
   const publishApplication = (applicationId: string) => {
@@ -154,6 +162,7 @@ export const EditorHeader = () => {
   };
 
   const handlePublish = () => {
+    const applicationId = getCurrentApplicationId(store.getState());
     if (applicationId) {
       publishApplication(applicationId);
 
@@ -218,16 +227,16 @@ export const EditorHeader = () => {
                 savingState={
                   isSavingName ? SavingState.STARTED : SavingState.NOT_STARTED
                 }
-                isNewApp={
-                  applicationList.filter((el) => el.id === applicationId)
-                    .length > 0
-                }
-                onBlur={(value: string) =>
-                  updateApplicationDispatch(applicationId || "", {
+                isNewApp={isNewApp}
+                onBlur={(value: string) => {
+                  const applicationId = getCurrentApplicationId(
+                    store.getState(),
+                  );
+                  return updateApplicationDispatch(applicationId || "", {
                     name: value,
                     currentApp: true,
-                  })
-                }
+                  });
+                }}
               />
             )}
           </Boxed>
