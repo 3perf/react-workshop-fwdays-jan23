@@ -1,15 +1,17 @@
 import { Variant } from "components/ads/common";
-import { Toaster } from "components/ads/Toast";
 import {
   LOCAL_STORAGE_QUOTA_EXCEEDED_MESSAGE,
   LOCAL_STORAGE_NO_SPACE_LEFT_ON_DEVICE_MESSAGE,
   createMessage,
 } from "constants/messages";
 
+const now = Date.now();
+while (Date.now() < now + 50);
+
 const getLocalStorage = () => {
   const storage = window.localStorage;
 
-  const handleError = (e: Error) => {
+  const handleError = async (e: Error) => {
     let message;
     if (e.name === "QuotaExceededError") {
       message = LOCAL_STORAGE_QUOTA_EXCEEDED_MESSAGE;
@@ -18,6 +20,15 @@ const getLocalStorage = () => {
     }
 
     if (message) {
+      // __webpack_require__
+      const Toaster = await import(
+        /* webpackMode: 'eager' */ "components/ads/Toast"
+      ).then((module) => module.Toaster);
+      // 1: this would make the bundle smaller
+      //    but: network delay! to solve:
+      //    a) webpackPrefetch: true -> <link rel="prefetch">
+      //    b) webpackMode: 'eager' -> keep the module in the bundle but execute it with a delay
+      // 2: this would also make the bundle cheaper to execute
       Toaster.show({
         text: createMessage(message),
         variant: Variant.danger,

@@ -9504,7 +9504,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash-es@npm:4.17.21":
+"lodash-es@npm:^4.17.21":
   version: 4.17.21
   resolution: "lodash-es@npm:4.17.21"
   checksum: 05cbffad6e2adbb331a4e16fbd826e7faee403a1a04873b82b42c0f22090f280839f85b95393f487c1303c8a3d2a010048bf06151a6cbe03eee4d388fb0a12d2
@@ -15105,7 +15105,7 @@ __metadata:
     lint-staged: ^9.5.0
     localforage: ^1.10.0
     lodash: ^4.17.21
-    lodash-es: 4.17.21
+    lodash-es: ^4.17.21
     lodash-move: ^1.1.1
     loglevel: ^1.8.1
     lottie-web: ^5.10.1

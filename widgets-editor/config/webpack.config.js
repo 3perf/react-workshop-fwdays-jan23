@@ -328,5 +328,9 @@ module.exports = function(webpackEnv) {
     performance: false,
   };
 
+  config.optimization.minimize = false;
+  config.optimization.moduleIds = "named";
+  config.optimization.concatenateModules = false;
+
   return config;
 };

@@ -173,6 +173,8 @@ export const darkenActive = (color: Color) => {
 };
 
 const getButtonHoverAndActiveStyles = (color: Color, filled = true) => {
+  const darkenedActive = darkenActive(color);
+
   return css`
     background: ${color};
     border-color: ${filled ? color : "auto"};
@@ -183,8 +185,8 @@ const getButtonHoverAndActiveStyles = (color: Color, filled = true) => {
       box-shadow: none;
     }
     &:active {
-      background: ${darkenActive(color)};
-      border-color: ${darkenActive(color)};
+      background: ${darkenedActive};
+      border-color: ${darkenedActive};
       box-shadow: none;
     }
   `;
@@ -210,7 +212,7 @@ export const BlueprintButtonIntentsCSS = css`
   }
   &&&.${Classes.BUTTON}.${Classes.INTENT_PRIMARY}:not(.${Classes.MINIMAL}) {
     background: ${IntentColors.primary};
-    ${getButtonHoverAndActiveStyles(IntentColors.primary)}
+    ${getButtonHoverAndActiveStyles("#03B365")}
   }
   &&&.${Classes.BUTTON}.bp4-intent-secondary:not(.${Classes.MINIMAL}) {
     background: ${IntentColors.secondary};
