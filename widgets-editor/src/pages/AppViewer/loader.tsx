@@ -1,6 +1,7 @@
 import React from "react";
 import PageLoadingBar from "pages/common/PageLoadingBar";
 import { retryPromise } from "utils/AppsmithUtils";
+import moduleDefault from "./index";
 
 class AppViewerLoader extends React.PureComponent<any, { Page: any }> {
   constructor(props: any) {
@@ -12,11 +13,7 @@ class AppViewerLoader extends React.PureComponent<any, { Page: any }> {
   }
 
   componentDidMount() {
-    retryPromise(() =>
-      import(/* webpackChunkName: "AppViewer" */ "./index"),
-    ).then((module) => {
-      this.setState({ Page: module.default });
-    });
+    this.setState({ Page: moduleDefault });
   }
 
   render() {

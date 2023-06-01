@@ -48,9 +48,7 @@ import "codemirror/addon/fold/foldgutter.css";
 import * as Sentry from "@sentry/react";
 import { removeNewLineChars, getInputValue } from "./codeEditorUtils";
 
-const LightningMenu = lazy(() =>
-  retryPromise(() => import("components/editorComponents/LightningMenu")),
-);
+import LightningMenu from "components/editorComponents/LightningMenu";
 
 const AUTOCOMPLETE_CLOSE_KEY_CODES = [
   "Enter",

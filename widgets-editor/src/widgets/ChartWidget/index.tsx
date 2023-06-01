@@ -11,13 +11,7 @@ import withMeta, { WithMeta } from "widgets/MetaHOC";
 import propertyConfig from "widgets/ChartWidget/propertyConfig";
 import { CustomFusionChartConfig } from "components/designSystems/appsmith/ChartComponent";
 
-const ChartComponent = lazy(() =>
-  retryPromise(() =>
-    import(
-      /* webpackPrefetch: true, webpackChunkName: "charts" */ "components/designSystems/appsmith/ChartComponent"
-    ),
-  ),
-);
+import ChartComponent from "components/designSystems/appsmith/ChartComponent";
 
 class ChartWidget extends BaseWidget<ChartWidgetProps, WidgetState> {
   static getPropertyValidationMap(): WidgetPropertyValidationType {

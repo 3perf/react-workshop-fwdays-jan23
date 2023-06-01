@@ -15,13 +15,7 @@ export enum RTEFormats {
   MARKDOWN = "markdown",
   HTML = "html",
 }
-const RichTextEditorComponent = lazy(() =>
-  retryPromise(() =>
-    import(
-      /* webpackChunkName: "rte",webpackPrefetch: 2 */ "components/designSystems/appsmith/RichTextEditorComponent"
-    ),
-  ),
-);
+import RichTextEditorComponent from "components/designSystems/appsmith/RichTextEditorComponent";
 
 class RichTextEditorWidget extends BaseWidget<
   RichTextEditorWidgetProps,

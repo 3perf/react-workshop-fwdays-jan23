@@ -13,11 +13,7 @@ import { retryPromise } from "utils/AppsmithUtils";
 import ReactPlayer from "react-player";
 import withMeta, { WithMeta } from "./MetaHOC";
 
-const VideoComponent = lazy(() =>
-  retryPromise(() =>
-    import("components/designSystems/appsmith/VideoComponent"),
-  ),
-);
+import VideoComponent from "components/designSystems/appsmith/VideoComponent";
 
 export enum PlayState {
   NOT_STARTED = "NOT_STARTED",

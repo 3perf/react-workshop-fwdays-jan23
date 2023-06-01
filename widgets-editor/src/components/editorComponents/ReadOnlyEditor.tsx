@@ -6,9 +6,7 @@ import {
   TabBehaviour,
 } from "components/editorComponents/CodeEditor/EditorConfig";
 
-const CodeEditorLazy = React.lazy(() =>
-  import("components/editorComponents/CodeEditor"),
-);
+import CodeEditorLazy from "components/editorComponents/CodeEditor";
 
 interface Props {
   input: {

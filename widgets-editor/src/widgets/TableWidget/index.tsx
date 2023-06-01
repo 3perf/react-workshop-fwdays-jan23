@@ -38,11 +38,7 @@ import {
 import tablePropertyPaneConfig from "./TablePropertyPaneConfig";
 import { BatchPropertyUpdatePayload } from "actions/controlActions";
 
-const ReactTableComponent = lazy(() =>
-  retryPromise(() =>
-    import("components/designSystems/appsmith/TableComponent"),
-  ),
-);
+import ReactTableComponent from "components/designSystems/appsmith/TableComponent";
 
 class TableWidget extends BaseWidget<TableWidgetProps, WidgetState> {
   static getPropertyValidationMap(): WidgetPropertyValidationType {
