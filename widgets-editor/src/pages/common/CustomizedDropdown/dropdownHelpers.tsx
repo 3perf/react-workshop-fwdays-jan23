@@ -1,4 +1,4 @@
-import store from "store";
+// import store from "store";
 import { IconNames } from "@blueprintjs/icons";
 import { Direction, Directions } from "utils/helpers";
 import { PopoverPosition } from "@blueprintjs/core";
@@ -18,7 +18,7 @@ export const getOnSelectAction = (
 ) => {
   switch (type) {
     case DropdownOnSelectActions.DISPATCH:
-      store.dispatch(payload);
+      // store.dispatch(payload);
       break;
     case DropdownOnSelectActions.REDIRECT:
       if (history.location.pathname !== payload.path) {
